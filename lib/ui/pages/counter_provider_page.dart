@@ -5,6 +5,10 @@ import 'package:provider/provider.dart';
 import '../shared/custom_app_menu.dart';
 import '../shared/custom_flat_button.dart';
 
+// Las Pages estan a modo de ejemplo. 
+// Se utiliza Views para redibujar solo la parte  que queremos.
+// De esta forma se evita reconstruir el AppMenu cuando no es necesario.
+
 class CounterProviderPage extends StatelessWidget {
   const CounterProviderPage({Key? key}) : super(key: key);
 
