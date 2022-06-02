@@ -6,14 +6,17 @@ import '../ui/views/counter_provider_view.dart';
 import '../ui/views/counter_view.dart';
 import '../ui/views/view_404.dart';
 
+//Solo queda este código a modo de ejemplo. Ya no se utiliza en este proyecto
+
+
 class RouterGenerator {
   static Route<dynamic>? generateRoute(RouteSettings? settings) {
     switch (settings!.name) {
       case "/stateful":
-        return _fadeRoute(const CounterView(), "/stateful");
+        return _fadeRoute(const CounterView(base: '5',), "/stateful");
 
       case "/provider":
-        return _fadeRoute(const CounterProviderView(), "/provider");
+        return _fadeRoute(const CounterProviderView(base: '5',), "/provider");
 
       default:
         return _fadeRoute(const View404(), "/404");

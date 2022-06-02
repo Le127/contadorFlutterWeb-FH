@@ -11,7 +11,7 @@ class CustomAppMenu extends StatelessWidget {
     //Si es mayor a 520 de ancho muestra la app como si estuviera en un Desktop.
     return LayoutBuilder(
       builder: (_, BoxConstraints constraints) {
-        return (constraints.maxWidth > 520)
+        return (constraints.maxWidth > 710)
             ? _TableDesktopMenu()
             : _MobileMenu();
       },
@@ -48,6 +48,20 @@ class _TableDesktopMenu extends StatelessWidget {
             color: Colors.black,
             // onPressed: () => Navigator.pushNamed(context, "/abc123"),
             onPressed: () => locator<NavigationService>().navigateTo("/abc123"),
+          ),
+          const SizedBox(width: 10),
+          CustomFlatButton(
+            text: "Stateful 100",
+            color: Colors.black,
+            onPressed: () =>
+                locator<NavigationService>().navigateTo("/stateful/100"),
+          ),
+          const SizedBox(width: 10),
+          CustomFlatButton(
+            text: "Provider 200",
+            color: Colors.black,
+            onPressed: () =>
+                locator<NavigationService>().navigateTo("/provider?q=200"),
           )
         ],
       ),
@@ -85,6 +99,20 @@ class _MobileMenu extends StatelessWidget {
             color: Colors.black,
             // onPressed: () => Navigator.pushNamed(context, "/abc123"),
             onPressed: () => locator<NavigationService>().navigateTo("/abc123"),
+          ),
+          const SizedBox(width: 10),
+          CustomFlatButton(
+            text: "Stateful 100",
+            color: Colors.black,
+            onPressed: () =>
+                locator<NavigationService>().navigateTo("/stateful/100"),
+          ),
+          const SizedBox(width: 10),
+          CustomFlatButton(
+            text: "Provider 200",
+            color: Colors.black,
+            onPressed: () =>
+                locator<NavigationService>().navigateTo("/provider?q=200"),
           )
         ],
       ),
